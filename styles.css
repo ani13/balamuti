@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
+
+* {
+  margin:0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
 :root {
   --background: rgba(214, 182, 0, 0.85);
 }
@@ -13,6 +22,8 @@ body {
 	background: #222;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
@@ -127,6 +138,27 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
+
+.footer {
+  background: black;
+  
+  text-align: center;
+  position: fixed;
+  padding: 10px 10px 0px 10px; 
+  bottom:0;
+  z-index: 999;
+  width: 100%;
+  
+}
+
+.footer-content {
+  color:white;
+  display: flex;
+  margin-bottom: 1em;
+  margin-left: 1em;
+
+}
+
 @media screen and (min-width: 800px) {
   .nav-toggle-label {
     display: none;
@@ -144,7 +176,7 @@ nav a:hover {
   nav {
     all: unset; /* this causes issues with Edge, since it's unsupported */
     
-    /* the following lines are not from my video, but add Edge support */
+    /* add Edge support */
     position: relative;
     text-align: left;
     transition: none;
