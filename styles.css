@@ -10,7 +10,7 @@ html {
   height: 100%;
 }
 :root {
-  --background: rgba(214, 182, 0, 0.85);
+  --background: #D9B08C;
 }
 
 *, *::before, *::after {
@@ -181,10 +181,12 @@ img {
   }
 
 .grid-text {
-  background:rgba(214, 0, 0, 0.637);
+  background: #116466;
   color: white;
   font:200;
   border:20px;
+  border-inline: solid;
+  padding: 10px;
   
   
 }
