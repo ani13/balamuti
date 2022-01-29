@@ -191,12 +191,21 @@ nav a:hover {
 .grid-item-last {
   margin: 20px;
   margin-bottom: 150px;
+  grid-column-start: span 2;
 }
+
 
 img {  
   max-width: 100%;  
   height: auto;  
-  }
+}
+
+.grid-item-last img{
+  float:left;
+  margin-right:1em;
+}
+
+
 
 .grid-text {
   background: #116466;
@@ -239,6 +248,7 @@ img {
   .grid-item-last {
     margin:20px;
     margin-bottom: 200px;
+    grid-column:auto;
   }
 
   .grid-item {
@@ -260,10 +270,7 @@ img {
     margin-right:1em;
   }
 
-  .grid-item-last img{
-    float:left;
-    margin-right:1em;
-  }
+  
 
   .grid-item img{
     float:left;
