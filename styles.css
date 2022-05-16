@@ -1,154 +1,112 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 
+
+
 * {
-  margin:0;
-  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 html {
   height: 100%;
-}
-:root {
-  --background: #D9B08C;
+  width: 100%;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
 body {
 	margin: 0;
-	background: #222;
+  background-color: rgb(39, 37, 37);
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
   display: flex;
   flex-direction: column;
+
+
 }
 
-.content {
-  height: 200vh;
-  background-image: url(https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
-  background-color: #333;
-  background-blend-mode: multiply;
-  background-size: cover;
-  display: grid;
-  place-items: center;
-}
+
 
 /* navigation styles start here */
 
-header {
-  background: var(--background);
-  text-align: center;
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  padding: 0px 10px 10px 10px;
-}
 
-/* changed this from the tutorial video to
-   allow it to gain focus, making it tabbable */
-.nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
-
-.nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(lightblue, .75);
-}
-
-.nav-toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: 1em;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  display: block;
-  background: white;
-  height: 2px;
-  width: 2em;
-  border-radius: 2px;
-  position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  content: '';
-  position: absolute;
-}
-
-.nav-toggle-label span::before {
-  bottom: 7px;
-}
-
-.nav-toggle-label span::after {
-  top: 7px;
-}
 
 nav {
-  position: absolute;
-  text-align: left;
-  top: 100%;
+ 
+  position: fixed;
+  top: 0;
   left: 0;
-  background: var(--background);
-  width: 100%;
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 400ms ease-in-out;
+  width: 250px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+
+  z-index: 9999;
+
+  border-right: 1px solid rgb(109, 102, 102);
+}
+
+
+nav a {
+  display: inline-block;
+  color: white;
+  padding: 5px 15px 5px 15px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+
+}
+
+nav a:hover {
+  border-style: solid none none none;
+  border-color: blanchedalmond;
 }
 
 nav ul {
-  margin: 0;
+  margin:0;
   padding: 0;
   list-style: none;
 }
 
 nav li {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   margin-left: 1em;
 }
 
-nav a {
+h2 {
   color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 150ms ease-in-out;
+  margin: 100px;
 }
 
-nav a:hover {
-  color: #000;
-}
 
-.nav-toggle:checked ~ nav {
-  transform: scale(1,1);
-}
 
-.nav-toggle:checked ~ nav a {
-  opacity: 1;
-  transition: opacity 250ms ease-in-out 250ms;
-}
 
+/* navigation styles end here */
+
+/* ============
+  FOOTER
+  ============= */
 
 .footer {
+
   background: black;
   
-  text-align: center;
-  position: fixed;
-  padding: 10px 10px 0px 10px; 
+  position: relative;
+  padding: 10px 10px 0px 10px;
+  margin-left: 250px;
+  margin-top: auto;
   bottom:0;
+  width: 100% - 250px;
+
   z-index: 999;
-  width: 100%;
+
   
 }
 
@@ -157,192 +115,163 @@ nav a:hover {
   display: flex;
   margin-bottom: 1em;
   margin-left: 1em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  
+
+}
+
+.footer-content a {
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color:blanchedalmond;
+}
+
+.footer img {
+  width: 50px;
+  height:50px;
+}
+
+/* =============
+  Footer end
+  ============== */
+
+
+
+
+/* ================
+  grid main content
+  ================= */
+
+
+.content {
+  background-color: rgb(39, 37, 37);
+  background-blend-mode: multiply;
+  background-size: cover;
+  place-items: center;
 
 }
 
 .grid-container {
   display: grid;
-  grid-gap: 3em;
-  grid-template-columns: fit-content(35%) fit-content(30%) 1fr;
-  
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 250px;
   
 }
 
 .grid-item1 {
-  margin: 20px;
-  margin-top: 100px;
-}
+  grid-column: span 1;
+  letter-spacing: 0.05em;
+} 
 
-.grid-item2{
-  margin: 20px;
-  margin-top: 100px;
+.grid-item2 {
+  grid-column: span 2;
+  grid-row: span 2;
 }
-
-.grid-item3{
-  margin: 20px;
-  margin-top:100px;
-}
-
-.grid-item {
-  margin: 20px;
-  margin-bottom: 100px;
-}
-
-.grid-item-last {
-  margin: 20px;
-  margin-bottom: 150px;
-  grid-column-start: span 2;
-}
-
 
 img {  
   max-width: 100%;  
   height: auto;  
 }
 
-.grid-item-last img{
-  float:left;
-  margin-right:1em;
-}
-
-
 
 .grid-text {
-  background: #116466;
-  color: black;
+  background: rgb(39, 37, 37);
+  color:blanchedalmond;
   font-size: 20px;
   border:10px;
-  border-style: solid;
   padding: 10px;
   
   
 }
 
-.grid-text:hover {
-  color:rgb(33, 7, 128);
+/* ==============
+ grid content end
+ ================ */
+
+#content1 {
+  display:none;
 }
 
+#content2 {
+  display: none;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-left: 250px;
+  gap: 3em;
+}
+
+
+#short-review {
+  color:white;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  border-style: solid;
+  border-color: white;
+  border: 5px;
+  margin: 20px;
+}
+
+#item img {
+  margin: 20px;
+  border-style:solid;
+  border-color: black;
+}
+
+
+#essey1 {
+  display: none;
+  margin-left: 250px;
+}
+
+#essey1 img {
+  width: 100%-250px;
+  height: 500px;
+
+}
+
+#essey {
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  background-color: white;
+  padding: 20px;
+  color:black;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  border-style: solid black 10px;
+  margin: 20px;
+  font-size: 20px;
+  word-spacing: 4px;
+
+}
+
+
+
+
+ /* ===================
+  for a smaller screen 
+  ====================== */
+
 @media screen and (max-width: 900px) {
+
   .grid-container {
     display: grid;
     grid-gap: 3em;
     grid-template-columns: 100%;
     
   }
-  
-  .grid-item1 {
-    margin:20px;
-    margin-top: 100px;
-  }
 
-
-  .grid-item2 {
+  .grid-item1, .grid-item2, .grid-item3{
     margin: 20px;
-    margin-top:20px;
   }
 
   .grid-item3 {
-    margin: 20px;
-    margin-top:20px;
-  }
-  .grid-item-last {
-    margin:20px;
-    margin-bottom: 200px;
-    grid-column:auto;
-  }
-
-  .grid-item {
-    margin:20px;
-  }
-
-  .grid-item1 img{
-    float:left;
-    margin-right:1em;
-  }
-
-  .grid-item2 img{
-    float:left;
-    margin-right:1em;
-  }
-
-  .grid-item3 img{
-    float:left;
-    margin-right:1em;
-  }
-
-  
-
-  .grid-item img{
-    float:left;
-    margin-right:1em;
+    margin-bottom: 100px;
   }
 
 
-
-}
-
-@media screen and (min-width: 1300px) {
-  .nav-toggle-label {
-    display: none;
-  }
-
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-  }
-  
-  .logo {
-    grid-column: 2 / 3;
-  }
-  
-  nav {
-    all: unset; /* this causes issues with Edge, since it's unsupported */
-    
-    /* add Edge support */
-    position: relative;
-    text-align: left;
-    transition: none;
-    transform: scale(1,1);
-    background: none;
-    top: initial;
-    left: initial;
-    /* end Edge support stuff */
-    
-    grid-column: 3 / 4;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-  }
-  
-  nav li {
-    margin-left: 3em;
-    margin-bottom: 0;
-  }
-  
-  nav a {
-    opacity: 1;
-    position: relative;
-  }
-  
-  nav a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    background: black;
-    position: absolute;
-    top: -.75em;
-    left: 0;
-    right: 0;
-    transform: scale(0, 1);
-    transition: transform ease-in-out 250ms;
-  }
-  
-  nav a:hover::before {
-    transform: scale(1,1);
-  }
 }
 
